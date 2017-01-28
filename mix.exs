@@ -15,7 +15,12 @@ defmodule Elixirss.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger]]
+    [extra_applications: [
+      :logger,
+      :ecto,
+      :postgrex,
+    ],
+     mod: {Elixirss, []}]
   end
 
   # Dependencies can be Hex packages:
@@ -29,6 +34,8 @@ defmodule Elixirss.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:credo, "~> 0.6", only: [:dev, :test]},
+     {:ecto, "~> 2.1"},
+     {:postgrex, "~> 0.13"},
      {:tesla, "~> 0.5.2"},
      {:poison, "~> 3.1.0"}]
   end
