@@ -24,6 +24,7 @@ env:
 
 before_script:
   - mix ecto.create
+  - mix ecto.migrate
 
 script:
   - mix credo

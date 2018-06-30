@@ -19,6 +19,7 @@ defmodule Elixirss.Mixfile do
       :logger,
       :ecto,
       :postgrex,
+      :feedme
     ],
      mod: {Elixirss, []}]
   end
@@ -34,9 +35,12 @@ defmodule Elixirss.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:credo, "~> 0.6", only: [:dev, :test]},
+     {:mix_test_watch, "~> 0.2", only: :dev},
      {:ecto, "~> 2.1"},
+     {:feedme, git: "https://github.com/umurgdk/elixir-feedme"},
      {:postgrex, "~> 0.13"},
      {:tesla, "~> 0.5.2"},
-     {:poison, "~> 3.1.0"}]
+     {:timex, "~> 3.1.8"},
+     {:quinn, "~> 1.0.0"}]
   end
 end
